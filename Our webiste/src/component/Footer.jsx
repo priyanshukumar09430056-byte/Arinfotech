@@ -13,6 +13,8 @@ const Footer = () => (
           <a href="/">Home</a>
           <a href="/services">Services</a>
           <a href="/portfolio">Portfolio</a>
+          <a href="/team">Team</a>
+          <a href="/academic">Academic</a>
         </div>
         <div className="footer__col">
           <h4>Company</h4>
