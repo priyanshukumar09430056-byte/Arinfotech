@@ -4,7 +4,7 @@ const Home = () => (
       <div className="hero__content">
         <span className="hero__badge">Performance-Driven Digital Services</span>
         <h1 className="hero__title">
-          Build Digital Systems <span className="text-purple">That Drive Real Revenue</span>
+          DESIGNING THE <span className="text-purple">DIGITAL FUTURE.</span>
         </h1>
         <p className="hero__subtitle">
           Shopify development, SEO and performance marketing engineered for companies serious about scalable global growth.
