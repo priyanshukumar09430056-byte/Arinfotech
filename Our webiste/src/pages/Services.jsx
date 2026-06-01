@@ -9,49 +9,49 @@ const Services = () => (
       <div className="services__grid">
         <article className="service-card">
           <span className="service-card__badge">01</span>
-          <img src={require("../assets/service-gifs/performance.gif")} alt="Performance Marketing" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/l0HlJKStMebhwVgqs/giphy.gif" alt="Performance Marketing" className="service-card__gif" />
           <h3 className="service-card__title">Performance Marketing</h3>
           <p className="service-card__desc">Maximize ROI with data-driven campaigns that deliver measurable results for your business.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">02</span>
-          <img src={require("../assets/service-gifs/social.gif")} alt="Social Media Marketing" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/l0MYB8Ory7Hqefo9a/giphy.gif" alt="Social Media Marketing" className="service-card__gif" />
           <h3 className="service-card__title">Social Media Marketing</h3>
           <p className="service-card__desc">Strategic content creation and management across platforms to engage your audience and grow your brand.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">03</span>
-          <img src={require("../assets/service-gifs/seo.gif")} alt="Search Engine Optimization" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/3ohzdYJK1wAdPWVk88/giphy.gif" alt="Search Engine Optimization" className="service-card__gif" />
           <h3 className="service-card__title">Search Engine Optimization</h3>
           <p className="service-card__desc">Improve your website’s visibility and ranking on search engines with proven SEO strategies.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">04</span>
-          <img src={require("../assets/service-gifs/content.gif")} alt="Content Marketing" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/xT9IgGFQj1oyxLqL6k/giphy.gif" alt="Content Marketing" className="service-card__gif" />
           <h3 className="service-card__title">Content Marketing</h3>
           <p className="service-card__desc">Engaging content that builds brand authority and attracts your ideal customers.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">05</span>
-          <img src={require("../assets/service-gifs/brand.gif")} alt="Brand Strategy & Consulting" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/l0MYIHF3LkF9tY2Cg/giphy.gif" alt="Brand Strategy & Consulting" className="service-card__gif" />
           <h3 className="service-card__title">Brand Strategy & Consulting</h3>
           <p className="service-card__desc">Customized marketing strategies that align with your business goals and drive growth.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">06</span>
-          <img src={require("../assets/service-gifs/design.gif")} alt="Creative Design" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/3o7TKsQmbjrU8hQNGo/giphy.gif" alt="Creative Design" className="service-card__gif" />
           <h3 className="service-card__title">Creative Design</h3>
           <p className="service-card__desc">Visually appealing creatives that resonate with your target audience and elevate your brand.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">07</span>
-          <img src={require("../assets/service-gifs/ecommerce.gif")} alt="E-Commerce Marketing" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif" alt="E-Commerce Marketing" className="service-card__gif" />
           <h3 className="service-card__title">E-Commerce Marketing</h3>
           <p className="service-card__desc">Comprehensive solutions to boost your online store’s sales and visibility.</p>
         </article>
         <article className="service-card">
           <span className="service-card__badge">08</span>
-          <img src={require("../assets/service-gifs/whatsapp.gif")} alt="WhatsApp Business API" className="service-card__gif" />
+          <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="WhatsApp Business API" className="service-card__gif" />
           <h3 className="service-card__title">WhatsApp Business API</h3>
           <p className="service-card__desc">In-depth WhatsApp Business API performance analysis to refine, optimize, and scale your customer engagement campaigns.</p>
         </article>
