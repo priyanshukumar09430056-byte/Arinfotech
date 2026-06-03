@@ -1,3 +1,4 @@
+/* ── Base nav ──────────────────────────────────────── */
 .nav {
   position: fixed;
   top: 0;
@@ -7,26 +8,76 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 32px;
+  padding: 20px 32px;
   gap: 24px;
   background: rgba(8, 8, 12, 0.25);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
+/* ── Logo ──────────────────────────────────────────── */
 .nav .logo {
   display: flex;
   align-items: center;
-  min-height: 64px;
+  min-height: 58px;
   flex-shrink: 0;
+  z-index: 110;
 }
 
 .nav .logo img {
   display: block;
-  height: 58px;
+  height: 52px;
   width: auto;
   object-fit: contain;
 }
 
+/* ── Hamburger ─────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 110;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hamburger:hover {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: #f1f1f5;
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              width 0.3s ease;
+}
+
+/* Animate to X when open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Menu (desktop) ────────────────────────────────── */
 .nav .menu {
   display: flex;
   align-items: center;
@@ -62,9 +113,14 @@
   display: block;
   width: 0;
   height: 2px;
-  margin-top: 6px;
+  margin-top: 5px;
   background: #a855f7;
   transition: width 0.18s ease;
+}
+
+/* Don't underline the CTA button */
+.nav .menu li a.btn::after {
+  display: none;
 }
 
 .nav .menu li a:hover::after,
@@ -72,39 +128,112 @@
   width: 100%;
 }
 
+/* ── CTA button ────────────────────────────────────── */
+.btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.35);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn--primary:hover {
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.55);
+  transform: translateY(-2px) !important;
+  opacity: 0.92;
+}
+
+/* ── Nav Chat (always-visible CTA) ─────────────────── */
+.nav__chat {
+  flex-shrink: 0;
+  z-index: 110;
+}
+
+/* ── Tablet: ≤ 900px ──────────────────────────────── */
 @media (max-width: 900px) {
-  .nav {
-    flex-wrap: wrap;
-    padding: 18px 22px;
+  .hamburger {
+    display: flex;
+    margin-left: auto; /* push hamburger + chat to the right */
   }
 
   .nav .menu {
-    width: 100%;
+    /* Full-width dropdown below the nav bar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: rgba(8, 8, 12, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 88px 28px 28px;
+
+    /* Hidden state */
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: clip-path 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
   }
 
-  .nav .menu ul {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .nav {
-    padding: 16px 18px;
+  .nav .menu.menu--open {
+    clip-path: inset(0 0 0% 0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav .menu ul {
     flex-direction: column;
-    gap: 12px;
+    align-items: stretch;
+    gap: 6px;
     width: 100%;
   }
 
   .nav .menu li a {
-    display: inline-block;
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.06);
+    display: block;
+    padding: 13px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  }
+
+  .nav .menu li a:hover {
+    background: rgba(168, 85, 247, 0.12);
+    color: #a855f7;
+  }
+
+  /* Remove underline pseudo-element on mobile */
+  .nav .menu li a::after {
+    display: none;
+  }
+
+  /* Chat button stays compact & pill-shaped — never full-width */
+  .nav__chat {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 999px;
+  }
+}
+
+/* ── Mobile: ≤ 480px ──────────────────────────────── */
+@media (max-width: 480px) {
+  .nav {
+    padding: 16px 18px;
+  }
+
+  .nav .logo img {
+    height: 44px;
   }
 }
