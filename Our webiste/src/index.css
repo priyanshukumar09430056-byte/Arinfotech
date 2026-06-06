@@ -13,10 +13,10 @@
   --bg-secondary: #0f0f18;
   --bg-card: #111120;
   --bg-card-hover: #161628;
-  --purple: #7c3aed;
-  --purple-light: #a855f7;
-  --purple-glow: rgba(124, 58, 237, 0.35);
-  --purple-soft: rgba(124, 58, 237, 0.12);
+  --purple: #9e2020;
+  --purple-light: #bf2c2b;
+  --purple-glow: rgba(158, 32, 32, 0.35);
+  --purple-soft: rgba(158, 32, 32, 0.12);
   --yellow: #facc15;
   --text-primary: #f1f1f5;
   --text-muted: #9490a9;
@@ -110,7 +110,7 @@ img {
 .btn--primary:hover {
   background: var(--purple-light);
   border-color: var(--purple-light);
-  box-shadow: 0 0 36px rgba(168, 85, 247, 0.55);
+  box-shadow: 0 0 36px rgba(191, 44, 43, 0.55);
   transform: translateY(-2px);
 }
 
